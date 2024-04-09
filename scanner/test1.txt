@@ -1,0 +1,17 @@
+read n;
+i := 0
+sum := 0;
+while i < n do
+  j := 0
+  while j < n do
+    sum := sum + 1;
+    j := j + 1;
+  end;
+  i := i + 1;
+end;
+if sum > 0 then
+  sum := sum * 100;
+else 
+  sum := 100
+end 
+write sum
