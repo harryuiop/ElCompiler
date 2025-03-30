@@ -3,26 +3,10 @@ This program uses PLY (Python Lex-Yacc). Documentation for PLY is
 available at
     https://www.dabeaz.com/ply/ply.html
 
-PLY can be installed on your own system using pip, which comes
-preinstalled on recent versions of Python (>= 3.4). Using pip the PLY
-package can be installed with the following command:
-    pip3 install ply
-This requires Internet access to download the package.
 """
 
 import ply.lex as lex
 import sys
-
-"""
-PLY's scanner works by matching regular expressions to the tokens.
-If you need a reminder of the syntax for regular expressions, check
-the following link:
-    https://docs.python.org/3/library/re.html
-
-All tokens that the lexer can find must be declared in a list of
-strings called tokens, which contains the names of the tokens, but
-not the regular expressions matching them.
-"""
 
 # reserved words
 reserved = {
@@ -44,6 +28,8 @@ tokens = [
 ] + list(reserved.values())
 
 """
+DOCUMENTAION FROM PLY FROM REFERENCE:
+
 A regular expression is associated to a token as in the following
 example:
 

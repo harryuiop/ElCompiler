@@ -42,9 +42,6 @@ class Scanner:
         '''Returns the next token and the part of input_string it matched.
            The returned token is None if there is no next token.
            The characters up to the end of the token are consumed.
-           TODO:
-           Call no_token() if the input contains extra characters that 
-           do not match any token (and are not white-space).
         '''
         self.skip_white_space()
         # find the longest prefix of input_string that matches a token

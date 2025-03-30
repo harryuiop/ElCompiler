@@ -2,31 +2,11 @@
 This program uses PLY (Python Lex-Yacc). Documentation for PLY is
 available at
     https://www.dabeaz.com/ply/ply.html
-
-PLY can be installed on your own system using pip, which comes
-preinstalled on recent versions of Python (>= 3.4). Using pip the PLY
-package can be installed with the following command:
-    pip3 install ply
-This requires Internet access to download the package.
 """
 
 import ply.lex as lex
 import ply.yacc as yacc
 import sys
-
-
-
-
-"""
-PLY's scanner works by matching regular expressions to the tokens.
-If you need a reminder of the syntax for regular expressions, check
-the following link:
-    https://docs.python.org/3/library/re.html
-
-All tokens that the lexer can find must be declared in a list of
-strings called tokens, which contains the names of the tokens, but
-not the regular expressions matching them.
-"""
 
 # reserved words
 reserved = {
@@ -47,34 +27,6 @@ tokens = [
     'ADD', 'SUB', 'MUL', 'DIV', 'LPAR', 'RPAR', 'NUM', 'ID'
 ] + list(reserved.values())
 
-"""
-A regular expression is associated to a token as in the following
-example:
-
-    t_EXAMPLE1 = r'\+'
-
-The declared name must start with 't_' and end with the name of a
-token (an element of tokens). It is assigned a string denoting a
-regular expression. The prefix 'r' of the string is not related to
-regular expressions but specifies raw strings in Python. In raw
-strings, Python does not treat backslashes as escape sequences.
-
-By declaring a function instead of a string, an action can be
-performed after a token has been matched:
-
-    def t_EXAMPLE2(t):
-        r'\+'
-        t.type = 'ADD' # must be the name of a token
-        t.value = 'ADD' # can be any value associated with the token
-        return t
-
-In this case, the regular expression is the docstring of the
-function. The function has a single input 't', a token object with
-attributes type and value, both of which are already set. The
-attribute t.type is set to the function's name without 't_' and
-t.value is set to the string that the regular expression matched.
-These attributes can be modified if necessary, as shown above.
-"""
 
 # rules specifying regular expressions and actions
 
